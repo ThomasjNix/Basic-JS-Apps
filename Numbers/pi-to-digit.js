@@ -10,9 +10,11 @@ var paragraph = document.getElementById('p_if_needed');
 header.innerHTML = "Enter how many digits you want to view pi to. Example: to get 3.14, enter 2. NOTE: Only enter whole numbers between 1 and 20!";
 const PI = Math.PI;
 
+
+var testIfInt =
 button.onclick = function(){
   var textboxVal = textbox.value;
-  var numDecimals = (!Number.isNaN(textboxVal) && textboxVal % 1 === 0) ? textboxVal : 0;
+  var numDecimals = (!Number.isNaN(textboxVal) && Number.isInteger(Number(textboxVal))) ? textboxVal : 0;
 
   if (numDecimals >= 1 && numDecimals <= 20){
     paragraph.innerHTML = "Pi to " + numDecimals + " digits: " + PI.toFixed(numDecimals);
